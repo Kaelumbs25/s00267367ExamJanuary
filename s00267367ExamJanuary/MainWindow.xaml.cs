@@ -23,6 +23,7 @@ namespace s00267367ExamJanuary
         public MainWindow()
         {
             InitializeComponent();
+            int i = 0;
         }
     }
 }
