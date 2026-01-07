@@ -94,5 +94,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="delivery-robot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="robot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="household-robot.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

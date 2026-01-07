@@ -10,6 +10,27 @@
         Loaded="Window_Loaded">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock HorizontalAlignment="Center" Margin="0,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.152,-1.595" Height="46" Width="81" FontSize="36"><Run Language="en-gb" Text="Filter"/><LineBreak/><Run Language="en-gb"/></TextBlock>
+        <TextBlock HorizontalAlignment="Center" Margin="0,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.152,-1.595" Height="47" Width="173" FontSize="36" Grid.Column="1" Text="Robot List"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,27,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="-0.152,-1.595" Height="44" Width="215" FontSize="36" Grid.Column="2" Text="Robot Details"/>
+        <ListBox x:Name="lbxRobots" Grid.Column="1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,100,0,0" FontSize="14"/>
+        <TextBox x:Name="tbxDetails" Grid.Column="2" HorizontalAlignment="Center" Margin="0,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="267" Height="334"/>
+        <RadioButton x:Name="rbtnAll" Content="All Robots" HorizontalAlignment="Left" Margin="10,111,0,0" VerticalAlignment="Top" FontSize="16"/>
+        <RadioButton x:Name="rbtnHouse" HorizontalAlignment="Left" Margin="10,229,0,0" VerticalAlignment="Top" Content="Household" FontSize="16"/>
+        <RadioButton x:Name="rbtnDelivery" HorizontalAlignment="Left" Margin="10,345,0,0" VerticalAlignment="Top" Content="Delivery" FontSize="16"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="133,75,0,0" VerticalAlignment="Top" Width="100" Source="/robot.png"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="133,187,0,0" VerticalAlignment="Top" Width="100" Source="/household-robot.png"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="133,312,0,0" VerticalAlignment="Top" Width="100" Source="/delivery-robot.png"/>
+
+
     </Grid>
 </Window>
