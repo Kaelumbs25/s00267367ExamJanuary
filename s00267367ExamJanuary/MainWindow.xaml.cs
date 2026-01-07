@@ -69,14 +69,15 @@ namespace s00267367ExamJanuary
             List<Robot> filtered = new List<Robot>();
             foreach (Robot robot in Robots)
             {
-                string test = robot.DescribeRobot();
-                test.Substring(test.Length - 9);
-                if (test == "d Robot]")
+                string test = robot.ToString();
+                
+                if (test.Contains("Household"))
                 {
-                    lbxRobots.ItemsSource = null;
-                    lbxRobots.ItemsSource = filtered;
+                    filtered.Add(robot);
                 }
             }
+            lbxRobots.ItemsSource = null;
+            lbxRobots.ItemsSource = filtered;
         }
 
         private void rbtnDelivery_Checked(object sender, RoutedEventArgs e)
@@ -84,14 +85,15 @@ namespace s00267367ExamJanuary
             List<Robot> filtered = new List<Robot>();
             foreach (Robot robot in Robots)
             {
-                string test = robot.DescribeRobot();
-                test.Substring(test.Length - 9);
-                if (test == "y Robot]")
+                string test = robot.ToString();
+
+                if (test.Contains("Delivery"))
                 {
-                    lbxRobots.ItemsSource = null;
-                    lbxRobots.ItemsSource = filtered;
+                    filtered.Add(robot);
                 }
             }
+            lbxRobots.ItemsSource = null;
+            lbxRobots.ItemsSource = filtered;
         }
     }
 }
