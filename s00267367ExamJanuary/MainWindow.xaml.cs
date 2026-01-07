@@ -28,10 +28,13 @@ namespace s00267367ExamJanuary
 
         public void CreateRobots()
         {
-            HouseholdRobot robot = new HouseholdRobot();
-            {
+            HouseholdRobot HouseBot = new HouseholdRobot("HouseBot", 100, 100);
+            HouseholdRobot GardenMate = new HouseholdRobot("GardenMate", 100, 100);
+            HouseholdRobot Housemate3000 = new HouseholdRobot("Housemate 3000", 100, 100);
+            DeliveryRobot DeliverBot = new DeliveryRobot("DeliverBot", 100, 100);
+            DeliveryRobot FlyBot = new DeliveryRobot("FlyBot", 100, 100);
+            DeliveryRobot Driver = new DeliveryRobot("Driver", 100, 100);
 
-            }
         }
     }
 }
