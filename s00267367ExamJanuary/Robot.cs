@@ -62,7 +62,7 @@ namespace s00267367ExamJanuary
 
             for (int i = 0; i < Skills.Count(); i++) 
             {
-                description.Insert(0, $"{Skills[i]}\n");
+                description += "\n" + Skills[i] + "\n\n";
             }
 
             return description + base.DescribeRobot();
