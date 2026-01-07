@@ -56,5 +56,42 @@ namespace s00267367ExamJanuary
             Robot robot = lbxRobots.SelectedItem as Robot;
             tbxDetails.Text = robot.DescribeRobot();
         }
+
+        private void rbtnAll_Checked(object sender, RoutedEventArgs e)
+        {
+            
+            lbxRobots.ItemsSource = null;
+            lbxRobots.ItemsSource = Robots;
+        }
+
+        private void rbtnHouse_Checked(object sender, RoutedEventArgs e)
+        {
+            List<Robot> filtered = new List<Robot>();
+            foreach (Robot robot in Robots)
+            {
+                string test = robot.DescribeRobot();
+                test.Substring(test.Length - 9);
+                if (test == "d Robot]")
+                {
+                    lbxRobots.ItemsSource = null;
+                    lbxRobots.ItemsSource = filtered;
+                }
+            }
+        }
+
+        private void rbtnDelivery_Checked(object sender, RoutedEventArgs e)
+        {
+            List<Robot> filtered = new List<Robot>();
+            foreach (Robot robot in Robots)
+            {
+                string test = robot.DescribeRobot();
+                test.Substring(test.Length - 9);
+                if (test == "y Robot]")
+                {
+                    lbxRobots.ItemsSource = null;
+                    lbxRobots.ItemsSource = filtered;
+                }
+            }
+        }
     }
 }
