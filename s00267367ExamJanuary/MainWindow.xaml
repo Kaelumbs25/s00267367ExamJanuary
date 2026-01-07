@@ -6,8 +6,7 @@
         xmlns:local="clr-namespace:s00267367ExamJanuary"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Loaded="Window_Loaded">
+        Style="{StaticResource MaterialDesignWindow}">
 
     <Grid>
         <Grid.RowDefinitions>
