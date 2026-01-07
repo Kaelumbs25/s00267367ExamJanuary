@@ -53,7 +53,8 @@ namespace s00267367ExamJanuary
 
         private void lbxRobots_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            tbxDetails.Text = lbxRobots.SelectedItem.DescribeRobot();
+            Robot robot = lbxRobots.SelectedItem as Robot;
+            tbxDetails.Text = robot.DescribeRobot();
         }
     }
 }

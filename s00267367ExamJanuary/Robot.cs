@@ -41,7 +41,7 @@ namespace s00267367ExamJanuary
 
         public override string ToString()
         {
-            return $"{RobotName} - []";
+            return $"{RobotName}";
         }
     }
 
@@ -60,7 +60,7 @@ namespace s00267367ExamJanuary
 
             for (int i = 0; i < Skills.Count(); i++) 
             {
-                description.Insert(description.Length, $"{Skills[i]}\n");
+                description.Insert(description.Length-1, $"{Skills[i]}\n");
             }
 
             return description + base.DescribeRobot();
@@ -69,6 +69,11 @@ namespace s00267367ExamJanuary
         public void DownloadSkill(HouseholdSkill skill)
         {
             Skills.Add(skill);
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + " - [Household Robot]";
         }
     }
 
@@ -89,6 +94,11 @@ namespace s00267367ExamJanuary
             string description = $"I am a delivery robot.\n\nI specialise in delivery by {ModeOfDelivery}\n The maximum load I can carry is {MaxLoadKG} kg";
 
             return description + base.DescribeRobot();
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + " - [Delivery Robot]";
         }
     }
 }
