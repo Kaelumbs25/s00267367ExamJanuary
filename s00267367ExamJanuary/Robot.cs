@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,7 +10,7 @@ namespace s00267367ExamJanuary
     public enum HouseholdSkill { Cooking, Cleaning, Laundry, Gardening, ChildCare }
     public enum DeliveryMode { Walking, Driving, Flying }
 
-    abstract class Robot
+    public abstract class Robot
     {
         public string RobotName {  get; set; }
         public double PowerCapacityKWH { get; set; }
@@ -44,14 +45,14 @@ namespace s00267367ExamJanuary
         }
     }
 
-    class HouseholdRobot : Robot
+    public class HouseholdRobot : Robot
     {
         public HouseholdRobot(string name, double powerCapacityKWH, double currentPower) : base(name, powerCapacityKWH, currentPower)
         {
-
+            DownloadSkill(HouseholdSkill.Cleaning);
         }
 
-        private List<HouseholdSkill> Skills { get; set; }
+        private List<HouseholdSkill> Skills = new List<HouseholdSkill> { };
 
         public override string DescribeRobot()
         {
@@ -64,9 +65,14 @@ namespace s00267367ExamJanuary
 
             return description + base.DescribeRobot();
         }
+
+        public void DownloadSkill(HouseholdSkill skill)
+        {
+            Skills.Add(skill);
+        }
     }
 
-    class DeliveryRobot : Robot
+    public class DeliveryRobot : Robot
     {
         public DeliveryRobot(string name, double powerCapacityKWH, double currentPower) : base (name,powerCapacityKWH,currentPower)
         {

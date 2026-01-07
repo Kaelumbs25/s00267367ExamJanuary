@@ -20,6 +20,8 @@ namespace s00267367ExamJanuary
     /// </summary>
     public partial class MainWindow : Window
     {
+        public List<Robot> Robots = new List<Robot> { };
+
         public MainWindow()
         {
             InitializeComponent();
@@ -29,12 +31,29 @@ namespace s00267367ExamJanuary
         public void CreateRobots()
         {
             HouseholdRobot HouseBot = new HouseholdRobot("HouseBot", 100, 100);
+            Robots.Add(HouseBot);
             HouseholdRobot GardenMate = new HouseholdRobot("GardenMate", 100, 100);
+            Robots.Add(GardenMate);
             HouseholdRobot Housemate3000 = new HouseholdRobot("Housemate 3000", 100, 100);
+            Robots.Add(Housemate3000);
             DeliveryRobot DeliverBot = new DeliveryRobot("DeliverBot", 100, 100);
+            Robots.Add(DeliverBot);
             DeliveryRobot FlyBot = new DeliveryRobot("FlyBot", 100, 100);
+            Robots.Add(FlyBot);
             DeliveryRobot Driver = new DeliveryRobot("Driver", 100, 100);
+            Robots.Add(Driver);
 
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            CreateRobots();
+            lbxRobots.ItemsSource = Robots;
+        }
+
+        private void lbxRobots_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            tbxDetails.Text = lbxRobots.SelectedItem.DescribeRobot();
         }
     }
 }
