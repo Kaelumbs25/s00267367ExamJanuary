@@ -18,6 +18,7 @@ namespace s00267367ExamJanuary
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// repository link :https://github.com/Kaelumbs25/s00267367ExamJanuary.git
     public partial class MainWindow : Window
     {
         public List<Robot> Robots = new List<Robot> { };
