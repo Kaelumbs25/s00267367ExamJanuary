@@ -30,15 +30,15 @@ namespace s00267367ExamJanuary
 
         public void CreateRobots()
         {
-            HouseholdRobot HouseBot = new HouseholdRobot("HouseBot", 100, 100);
+            HouseholdRobot HouseBot = new HouseholdRobot("HouseBot", 100, 10);
             Robots.Add(HouseBot);
             HouseholdRobot GardenMate = new HouseholdRobot("GardenMate", 100, 100);
             Robots.Add(GardenMate);
-            HouseholdRobot Housemate3000 = new HouseholdRobot("Housemate 3000", 100, 100);
+            HouseholdRobot Housemate3000 = new HouseholdRobot("Housemate 3000", 100, 70);
             Robots.Add(Housemate3000);
-            DeliveryRobot DeliverBot = new DeliveryRobot("DeliverBot", 100, 100);
+            DeliveryRobot DeliverBot = new DeliveryRobot("DeliverBot", 100,4);
             Robots.Add(DeliverBot);
-            DeliveryRobot FlyBot = new DeliveryRobot("FlyBot", 100, 100);
+            DeliveryRobot FlyBot = new DeliveryRobot("FlyBot", 100, 40);
             Robots.Add(FlyBot);
             DeliveryRobot Driver = new DeliveryRobot("Driver", 100, 100);
             Robots.Add(Driver);
@@ -94,6 +94,22 @@ namespace s00267367ExamJanuary
             }
             lbxRobots.ItemsSource = null;
             lbxRobots.ItemsSource = filtered;
+        }
+
+        private void btnCharge_Click(object sender, RoutedEventArgs e)
+        {
+            Robot robot = lbxRobots.SelectedItem as Robot;
+
+            double time = (100-robot.GetBatteryPercentage())*.5;
+
+            if(robot.GetBatteryPercentage() < 100)
+            {
+                MessageBox.Show($"Robot fully charged! Time taken: {time} minutes");
+            }
+            else
+            {
+                MessageBox.Show("Robot is already fully charged.");
+            }
         }
     }
 }

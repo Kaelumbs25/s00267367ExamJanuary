@@ -29,7 +29,7 @@
         <Image HorizontalAlignment="Left" Height="100" Margin="133,75,0,0" VerticalAlignment="Top" Width="100" Source="/robot.png"/>
         <Image HorizontalAlignment="Left" Height="100" Margin="133,187,0,0" VerticalAlignment="Top" Width="100" Source="/household-robot.png"/>
         <Image HorizontalAlignment="Left" Height="100" Margin="133,312,0,0" VerticalAlignment="Top" Width="100" Source="/delivery-robot.png"/>
-        <Button x:Name="btnCharge" Grid.Column="2" Content="Charge" HorizontalAlignment="Left" Margin="59,386,0,0" VerticalAlignment="Top" Height="38" Width="124"/>
+        <Button x:Name="btnCharge" Grid.Column="2" Content="Charge" HorizontalAlignment="Left" Margin="59,386,0,0" VerticalAlignment="Top" Height="38" Width="124" Click="btnCharge_Click"/>
 
 
     </Grid>

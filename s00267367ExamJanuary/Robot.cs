@@ -20,7 +20,7 @@ namespace s00267367ExamJanuary
         {
             RobotName = name;
             PowerCapacityKWH = powerCapacityKWH;
-            CurrentPowerKWH = powerCapacityKWH;
+            CurrentPowerKWH = currentPower;
         }
 
         public double GetBatteryPercentage()
@@ -43,6 +43,8 @@ namespace s00267367ExamJanuary
         {
             return $"{RobotName}";
         }
+
+        
     }
 
     public class HouseholdRobot : Robot
