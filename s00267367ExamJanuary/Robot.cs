@@ -15,6 +15,13 @@ namespace s00267367ExamJanuary
         public double PowerCapacityKWH { get; set; }
         public double CurrentPowerKWH { get; set; }
 
+        public Robot(string name, double powerCapacityKWH, double currentPower)
+        {
+            RobotName = name;
+            PowerCapacityKWH = powerCapacityKWH;
+            CurrentPowerKWH = powerCapacityKWH;
+        }
+
         public double GetBatteryPercentage()
         {
 
@@ -39,6 +46,11 @@ namespace s00267367ExamJanuary
 
     class HouseholdRobot : Robot
     {
+        public HouseholdRobot(string name, double powerCapacityKWH, double currentPower) : base(name, powerCapacityKWH, currentPower)
+        {
+
+        }
+
         private List<HouseholdSkill> Skills { get; set; }
 
         public override string DescribeRobot()
@@ -56,6 +68,12 @@ namespace s00267367ExamJanuary
 
     class DeliveryRobot : Robot
     {
+        public DeliveryRobot(string name, double powerCapacityKWH, double currentPower) : base (name,powerCapacityKWH,currentPower)
+        {
+
+        }
+
+
         public DeliveryMode ModeOfDelivery {  get; set; }
 
         public double MaxLoadKG { get; set; }

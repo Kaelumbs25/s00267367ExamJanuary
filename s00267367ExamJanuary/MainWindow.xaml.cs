@@ -25,5 +25,13 @@ namespace s00267367ExamJanuary
             InitializeComponent();
             
         }
+
+        public void CreateRobots()
+        {
+            HouseholdRobot robot = new HouseholdRobot();
+            {
+
+            }
+        }
     }
 }
